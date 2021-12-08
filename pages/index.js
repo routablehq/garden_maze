@@ -17,25 +17,25 @@ const App = props => {
     socket.on('message1', (payload) => {
       console.log('message1', payload);
     });
-  
+
     socket.on('message2', (payload) => {
       console.log('message2', payload);
     });
-    
+
     setTimeout(() => {
       socket.emit('message2', 'message2');
     }, 2000)
-    
+
   }, [])
-  
-  const { x, y, maze, loaded } = useMaze()
+
+  const { x, y, maze, loaded } = useMaze(123456)
   return (
     <main className="app">
       <GlobalStyles />
       <h1 className="title">A-Maze'ing Routers!</h1>
       {loaded && (
-        <Field width={40} height={40}>
-          <Hedges maze={maze} width={40} height={40} />
+        <Field width={30} height={30}>
+          <Hedges maze={maze} width={30} height={30} />
           <Character x={x} y={y} />
         </Field>
       )}
