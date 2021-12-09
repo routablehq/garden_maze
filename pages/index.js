@@ -11,7 +11,7 @@ const App = props => {
   return (
     <main className="app">
       <GlobalStyles />
-      <h1 className="title">A-Maze'ing Routers!</h1>
+      <h1 className="title">A-maze'in Routable</h1>
       {loaded && (
         <Field width={30} height={30}>
           <Hedges maze={maze} width={30} height={30} />
