@@ -14,16 +14,9 @@ server.listen(port, hostname, () => {
 });
 
 io.on('connection', (socket) => {
-  console.log('connection', socket);
-  
-  socket.emit('message1', 'message1');
-  
-  setTimeout(() => {
-    socket.emit('message2', 'message2');
-  }, 2000);
-  
-  socket.on('message2', (payload) => {
-    console.log('message2', payload)
-    return { hi: 'hello' };
+  socket.on('client connected', (payload) => {
+    console.log('client connected', payload)
   });
+  
+  socket.emit('server connected', 'server connected OK');
 });
