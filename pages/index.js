@@ -15,20 +15,13 @@ const socket = io('http://localhost:8080');
 
 
 const App = props => {
-  useEffect(() => {
-    socket.on('message1', (payload) => {
-      console.log('message1', payload);
-    });
+  socket.emit('client connected', 'client connected');
 
-    socket.on('message2', (payload) => {
-      console.log('message2', payload);
-    });
+  socket.on('server connected', (payload) => {
+    console.log('server connected', payload);
+  });
 
-    setTimeout(() => {
-      socket.emit('message2', 'message2');
-    }, 2000)
 
-  }, [])
 
   const [identified, setIdentified] = useState(false);
   const [playerName, setPlayerName] = useState("");
@@ -41,6 +34,7 @@ const App = props => {
   const [w, h] = [40, 40];
   const seed = 123456;
   const { x, y, maze, loaded } = useMaze(w, h, seed)
+
   return (
     <main className="app">
       <GlobalStyles />
