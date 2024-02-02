@@ -18,8 +18,8 @@
     "generate-maze": "^1.1.0",
     "next": "^7.0.2",
     "nodemon": "^2.0.15",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "socket.io": "^4.4.0",
     "socket.io-client": "^4.4.0",
     "styled-components": "^4.1.1"
